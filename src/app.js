@@ -6,6 +6,7 @@ const { count } = require('console');
 
 // Creating a express web app
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -73,6 +74,6 @@ app.get('*', (req, res) => {
 })
 
 // Starting the web server on port 3000
-app.listen(3000, () => {
-    console.log('Web-server started and listening on port 3000.');
+app.listen(port, () => {
+    console.log('Web-server started and listening on port ' + port + '.');
 })

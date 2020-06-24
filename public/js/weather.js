@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=6ca62d8ae99f0bebd0e46fee0123c429&units=metric').then((response) => {
         response.json().then((data) => {
             if (data.message) {
-                message1.textContent = data.message
+                message1.textContent = data.message;
             } else {
                 message1.innerHTML = 'Weather update for <b>' + data.name + ', ' + data.sys.country + '</b>';
                 message2.innerHTML = 'Main: <b>' + data.weather[0].main +'</b>, ' + 'Description: ' + data.weather[0].description;
